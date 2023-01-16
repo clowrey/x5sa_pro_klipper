@@ -1,5 +1,5 @@
 
-**Klipper config for CPAP directly to BTT Octopus pro**
+**Klipper config for CPAP directly to BTT Octopus pro or Mellow Super 8 - or really any MB with similar shematic**
 
 It should work on any of the 3 pin headers because they all use the same basic output schematic. 
 
