@@ -3,6 +3,8 @@ Klipper config for CPAP directly to BTT Octopus pro
 
 It should work on any of the 3 pin headers because they all use the same basic output schematic. 
 
+The stock 3 pin 2.54mm pitch connector that goes from CPAP driver PCB to the variable resistor is actually the same 3 pin connector used on these MB! So you just have to move the pins around with small flat head screwdriver.. 
+
 - Mellow Super 8 section below -
 
 ```yaml
