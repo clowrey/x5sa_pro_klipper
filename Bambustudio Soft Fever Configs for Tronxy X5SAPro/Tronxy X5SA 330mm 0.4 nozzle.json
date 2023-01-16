@@ -1,0 +1,163 @@
+{
+    "auxiliary_fan": "0",
+    "bed_custom_model": "",
+    "bed_custom_texture": "",
+    "bed_exclude_area": [
+        "0x0"
+    ],
+    "before_layer_change_gcode": "",
+    "change_filament_gcode": "",
+    "default_filament_profile": [],
+    "default_print_profile": "0.16mm Optimal @Bambu Lab X1 Carbon 0.4 nozzle",
+    "deretraction_speed": [
+        "40"
+    ],
+    "extruder_clearance_height_to_lid": "140",
+    "extruder_clearance_height_to_rod": "36",
+    "extruder_clearance_max_radius": "68",
+    "extruder_clearance_radius": "65",
+    "extruder_colour": [
+        "#FCE94F"
+    ],
+    "extruder_offset": [
+        "0x0"
+    ],
+    "from": "",
+    "gcode_flavor": "klipper",
+    "host_type": "octoprint",
+    "inherits": "Tronxy X5SA 400 0.4 nozzle",
+    "layer_change_gcode": "",
+    "machine_end_gcode": "M400 ; wait for buffer to clear\nG92 E0 ; zero the extruder\nG1 E-4.0 F3600; retract \nG91 ; use relative position\nG1 Z3; move Z up 3mm\nM104 S0 ; turn off hotend\nM140 S0 ; turn off bed\n\nG90 ; use absolute position\nG1 Y2 X2; move off to front left side of build platform\nM84     ; disable motors\nprint_end",
+    "machine_load_filament_time": "0",
+    "machine_max_acceleration_e": [
+        "5000"
+    ],
+    "machine_max_acceleration_extruding": [
+        "10000"
+    ],
+    "machine_max_acceleration_retracting": [
+        "1000"
+    ],
+    "machine_max_acceleration_travel": [
+        "1500",
+        "1250"
+    ],
+    "machine_max_acceleration_x": [
+        "10000"
+    ],
+    "machine_max_acceleration_y": [
+        "10000"
+    ],
+    "machine_max_acceleration_z": [
+        "100"
+    ],
+    "machine_max_jerk_e": [
+        "5"
+    ],
+    "machine_max_jerk_x": [
+        "4"
+    ],
+    "machine_max_jerk_y": [
+        "4"
+    ],
+    "machine_max_jerk_z": [
+        "0.4"
+    ],
+    "machine_max_speed_e": [
+        "60"
+    ],
+    "machine_max_speed_x": [
+        "500"
+    ],
+    "machine_max_speed_y": [
+        "500"
+    ],
+    "machine_max_speed_z": [
+        "10"
+    ],
+    "machine_min_extruding_rate": [
+        "0"
+    ],
+    "machine_min_travel_rate": [
+        "0"
+    ],
+    "machine_pause_gcode": "",
+    "machine_start_gcode": "G28; home all\nG1 F9600;\nG1 Y2 X2; move off to left side of build platform\nM140 S[first_layer_bed_temperature]; set bed temp\nM104 S[first_layer_temperature]; set extruder temp\nM109 S[first_layer_temperature]; wait for extruder temp\nM190 S[first_layer_bed_temperature]; wait for bed temp\n\n;  G28 Z; home Z - dont do this as it would leave melted plastic in middle of bed\n\nM104 S150 ; set temp to 150 but do not wait\n\nG1 Z-0.6 F10000.0 ;lower nozzle to below bed level while still off bed to wipe hopefully\nG1 X200.0 Y5.1 F1500.0 ;move left and right to clean off plastic from nozzle\nG1 X200.0 Y5.4 F9600.0 ;\nG1 X127.0 Y5.8 F1500.0 ; smooth area of the bed to cool\nM109 S150 ; set temp to 150 and wait for plastic to cool \nG1 Z2.0 F10000.0 ; raise nozzle\n\nG28 Z; home Z one more time - should be accurate this time\nBED_MESH_CALIBRATE\n\nG1 X2.0 Y2.0 Z0.1 F10000.0 ;Move to safe position\n\nM109 S[first_layer_temperature]; wait for extruder temp\n\nG92 E0 ;Reset Extruder \nG1 X20.0 Y20.1 Z0.28 F10000.0 ;Move to start position\nG1 X200.0 Y20.1 Z0.28 F1500.0 E15 ;Draw the first line\nG1 X200.0 Y20.4 Z0.28 F9600.0 ;Move to side a little\nG1 X20.0 Y20.4 Z0.28 F1500.0 E30 ;Draw the second line\nG1 F9600;\nG92 E0 ;Reset Extruder ",
+    "machine_unload_filament_time": "0",
+    "max_layer_height": [
+        "0.28"
+    ],
+    "min_layer_height": [
+        "0.08"
+    ],
+    "name": "Tronxy X5SA 330mm 0.4 nozzle",
+    "nozzle_diameter": [
+        "0.4"
+    ],
+    "nozzle_hrc": "0",
+    "nozzle_type": "undefine",
+    "nozzle_volume": "0",
+    "print_host": "",
+    "printable_area": [
+        "0x0",
+        "330x0",
+        "330x330",
+        "0x330"
+    ],
+    "printable_height": "400",
+    "printer_model": "Tronxy X5SA 400 Marlin Firmware",
+    "printer_settings_id": "Tronxy X5SA 330mm 0.4 nozzle",
+    "printer_technology": "FFF",
+    "printer_variant": "0.4",
+    "printhost_apikey": "",
+    "printhost_authorization_type": "key",
+    "printhost_cafile": "",
+    "printhost_password": "",
+    "printhost_port": "",
+    "printhost_ssl_ignore_revoke": "0",
+    "printhost_user": "",
+    "retract_before_wipe": [
+        "70%"
+    ],
+    "retract_length_toolchange": [
+        "1"
+    ],
+    "retract_restart_extra": [
+        "0"
+    ],
+    "retract_restart_extra_toolchange": [
+        "0"
+    ],
+    "retract_when_changing_layer": [
+        "1"
+    ],
+    "retraction_length": [
+        "0.4"
+    ],
+    "retraction_minimum_travel": [
+        "2"
+    ],
+    "retraction_speed": [
+        "60"
+    ],
+    "scan_first_layer": "0",
+    "silent_mode": "0",
+    "single_extruder_multi_material": "0",
+    "template_custom_gcode": "",
+    "thumbnails": [
+        "300x300"
+    ],
+    "upward_compatible_machine": [],
+    "use_firmware_retraction": "0",
+    "version": "1.4.10.0",
+    "wipe": [
+        "1"
+    ],
+    "wipe_distance": [
+        "2"
+    ],
+    "z_hop": [
+        "0"
+    ],
+    "z_lift_type": "SpiralLift"
+}
