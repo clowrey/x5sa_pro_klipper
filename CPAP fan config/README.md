@@ -1,9 +1,11 @@
 
-Klipper config for CPAP directly to BTT Octopus pro
+Klipper config for CPAP directly to BTT Octopus pro 
 
-Should also work with Mellow Super 8 on any of the 3 pin headers 
+It should work on any of the 3 pin headers because they all use the same basic output schematic. 
 
-```
+- Mellow Super 8 section below -
+
+```yaml
 [fan] #        CPAP print Cooling Fan\
 pin: PG15 # for ocotopus pro Endstop 7 header
 max_power: 1 # adjust below 1 if you would like the max speed to be slower
@@ -13,3 +15,12 @@ cycle_time: .0005 # = 2khz - CPAP fan driver recommended range is 2-50khz
 
 ![Model preview](https://github.com/clowrey/x5sa_pro_klipper/blob/main/CPAP%20fan%20config/CPAP%20driver%20pin%20location%20(Large).jpg)
 ![Model preview](https://github.com/clowrey/x5sa_pro_klipper/blob/main/CPAP%20fan%20config/CPAP%20driver%20to%20BTT%20octopus%20pro%20(Large).jpg)
+![Model preview](https://github.com/clowrey/x5sa_pro_klipper/blob/main/CPAP%20fan%20config/Octopus%20pro%20recommended%20pins.jpg)
+![Model preview](https://github.com/clowrey/x5sa_pro_klipper/blob/main/CPAP%20fan%20config/Octopus%20pro%20PCB%20GPIO%20pin%20names.jpg)
+
+For the Mellow Super 8 the output schematic is quite different - with a 1k series resistor on almost all of the output pins, this in combination with the 10k pullup allows for the lowest voltage to be 0.3v - which is still below the turn on voltage of the CPAP fan driver I believe. 
+
+The green circled HV in pin is the best one to use as it has no pullup. The other ones in yellow have 10k pullups so would be the second choice and should still work fine. 
+
+![Model preview](https://github.com/clowrey/x5sa_pro_klipper/blob/main/CPAP%20fan%20config/Super%208%20recommended%20pins.jpg)
+![Model preview](https://github.com/clowrey/x5sa_pro_klipper/blob/main/CPAP%20fan%20config/Super%208%20PCB%20underside%20GPIO%20names.jpg)
