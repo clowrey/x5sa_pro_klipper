@@ -18,5 +18,9 @@ Install super slicer https://github.com/supermerill/SuperSlicer/releases
 
 File - Import - Import Config Bundle - and use the bundle in this repository
 
+Video of my nozzle + linear rail + lower endstop contact bed leveling setup:
+https://youtu.be/urmSgkl6vnU
 
+Video of it printing before attaching accelerometer and motion shaper:
+https://youtu.be/9MZbLJ6z8Nc
 
